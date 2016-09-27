@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+h1 {
+    background-color: lightyellow;
+}
+h2 {
+    background-color: lightpink;
+}
+div {
+    background-color: green;
+}
+
+p {
+    background-color: lightblue;
+}
+a {
+    background-color: yellow;
+}
+</style>
+    <meta charset="utf-8" />
+<!--      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">  -->
+    <title>A Lighting World</title>
+  </head>
+	<!--	Create the HTML5 'canvas' element in which we will run WebGL
+	-->
+  <body onload="main()" onresize="resize">
+     <h1> EECS 351 Project C: A Lighting World</h1>
+     <h2> Shengjie Zhu,   Net ID: szu187</h2>
+    <canvas id="webgl" width="800" height="600">
+  
+    </canvas>
+	  <p>
+    <div id='Instructions'> Welcome! </div>
+    <p>
+   1) Press on 'left-arrow' & 'right-arrow' & 'up-arrow' & 'down-arrow' to step left & right & forward & backward.
+    <p>
+   2) Press on 'A' & 'D' & 'W' & 'S' to look left & right & up & down.
+    <p>
+   3) Press on 'Q' & 'E' to move upward & downward. 
+    <p>
+   4) Press on 'H' & 'K' & 'U' & 'J' & 'Y' & 'I' to move WorldLight to left & right & up & down & forward & backward.
+    <p>
+   5) Press on 'O' to open & close WorldLight. Press on 'P' to open & close HeadLight. 
+      ||   ||   || 
+      WorldLight is:
+      <a id="world">On</a>
+      ||   ||   || 
+      HeadLight is:
+      <a id="head">On</a>
+    <p>
+   6) Press on 'N' to change lighting mode. Press on 'M' to change shading mode.  
+      ||   ||   || 
+      Lighting Mode is:
+      <a id="lighting">Phong</a>
+      ||   ||   || 
+      Shading Mode is:
+      <a id="shadering">Phong</a>
+  <p>
+   7) Press on 'B' to change user-selected distance dependencies (ATT) for both light sources.
+
+<p>Change WorldLight's Ambient:
+    <a id="AR_value">R:0.5</a>
+    <input type="range" id="AR" min="0" max="1" step="0.1" value="0.5" onChange='changeAR()'/>
+
+    <a id="AG_value">G:0.5</a>
+    <input type="range" id="AG" min="0" max="1" step="0.1" value="0.5" onChange='changeAG()'/>
+
+    <a id="AB_value">B:0.5</a>
+    <input type="range" id="AB" min="0" max="1" step="0.1" value="0.5" onChange='changeAB()'/>
+
+  <p>Changce WorldLight's Diffuse:
+     <a id="DR_value">R:1.0</a>
+    <input type="range" id="DR" min="0" max="1" step="0.1" value="1.0" onChange='changeDR()'/>
+
+    <a id="DG_value">G:1.0</a>
+    <input type="range" id="DG" min="0" max="1" step="0.1" value="1.0" onChange='changeDG()'/>
+
+    <a id="DB_value">B:1.0</a>
+    <input type="range" id="DB" min="0" max="1" step="0.1" value="1.0" onChange='changeDB()'/>
+
+  <p>Change WordLight's Specular:
+     <a id="SR_value">R:0.7</a>
+    <input type="range" id="SR" min="0" max="1" step="0.1" value="0.7" onChange='changeSR()'/>
+
+    <a id="SG_value">G:0.7</a>
+    <input type="range" id="SG" min="0" max="1" step="0.1" value="0.7" onChange='changeSG()'/>
+
+    <a id="SB_value">B:0.7</a>
+    <input type="range" id="SB" min="0" max="1" step="0.1" value="0.7" onChange='changeSB()'/>
+  </p>
+	  
+    <script src="../lib/webgl-utils.js"></script>
+    <script src="../lib/webgl-debug.js"></script>
+    <script src="../lib/cuon-utils.js"></script>
+    <script src="../lib/cuon-matrix-mod.js"></script>
+    <script src="../lib/cuon-matrix-quat.js"></script>
+	<!--	Finally, load in our own JavaScript program file.
+	-->
+    <script src="ZhuShengjie_ProjC.js"></script>
+  </body>
+</html>
