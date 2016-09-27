@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+h1 {
+    background-color: lightyellow;
+}
+h2 {
+    background-color: lightpink;
+}
+div {
+    background-color: green;
+}
+
+p {
+    background-color: lightblue;
+}
+</style>
+    <meta charset="utf-8" />
+<!--      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">  -->
+    <title>3D Camera</title>
+  </head>
+	<!--	Create the HTML5 'canvas' element in which we will run WebGL
+	-->
+  <body onload="main()" onresize="resize()" style="margin:0px;padding:0px;width:100%;height:100%;">
+     <h1> EECS 351 Project B: 3D Camera View</h1>
+     <h2> Shengjie Zhu,   Net ID: szu187</h2>
+    <canvas id="webgl" width="600" height="600">
+  
+    </canvas>
+	  <p>
+    <div id='Instructions'> Welcome! </div>
+    <p>
+   1) Press on 'left-arrow' & 'right-arrow' & 'up-arrow' & 'down-arrow' to step left & right & forward & backward.
+ <p>
+2) Press on 'A' & 'D' & 'W' & 'S' to look left & right & up & down.
+ <p>
+3) Press on 'J' & 'L' to turn left & right while keeping moving. 
+ <p>
+4) Press on '1' & '2' & '3' & '4' to change the frustum parameters in order to reset the orthographic camera.
+ <p>
+5) Click & drag mouse to rotate the first left tree and the robot head with quanternion-based ‘trackball’ control.
+ <p>
+6) Press on 'C' to switch Perspective camera to show view from the hand of the robot. Press again to change back to the original perspective camera. 
+ <p>
+7) ‘Flying-airplane’ navigation controls: First press on 'U' to set a constant forward velocity. Then press on 'M' & 'N' to pitch. Or Press on 'left-arrow' & 'right-arrow' to turn left & right. Or Press on 'W' & 'S' to fly up and down. If you want to stop, just press 'U' again. 
+
+    <div id='ShapeName'> </div>
+     </p>
+
+     <p>
+    <div id='KeyCode'> </div>
+     </p>
+	  
+    <script src="lib/webgl-utils.js"></script>
+    <script src="lib/webgl-debug.js"></script>
+    <script src="lib/cuon-utils.js"></script>
+    <script src="lib/cuon-matrix-mod.js"></script>
+    <script src="lib/cuon-matrix-quat.js"></script>
+	<!--	Finally, load in our own JavaScript program file.
+	-->
+    <script src="javascriptes/ZhuShengjie_ProjB.js"></script>
+  </body>
+</html>
